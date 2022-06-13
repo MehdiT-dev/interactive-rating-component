@@ -1,0 +1,156 @@
+/***Overpass Font Import***/
+@import url('https://fonts.googleapis.com/css2?family=Overpass:wght@400;700&display=swap');
+
+/***CSS Variables***/
+:root {
+    --orange: hsl(25, 97%, 53%);
+    --white: hsl(0, 0%, 100%);
+    --light-grey: hsl(217, 12%, 63%);
+    --medium-grey: hsl(216, 12%, 54%);
+    --dark-blue: hsl(213, 19%, 18%);
+    --very-dark-blue: hsl(216, 12%, 8%);
+}
+
+/***Reset CSS***/
+*, ::before, ::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/***Global Style***/
+body {
+    background: var(--very-dark-blue);
+    font-family: 'Overpass', sans-serif;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+/***Card***/
+.card {
+    width: 90%;
+    max-width: 365px;
+    margin: auto;
+    padding: 1.5em;
+    background: radial-gradient(circle at top center, var(--dark-blue) 0%, var(--very-dark-blue) 150%) top center;
+    background-position: 0 50%;
+    background-origin: padding-box;
+    border-radius: 20px;
+}
+.card.hiden {
+    display: none;
+}
+
+/***Card Content***/
+.card-content.center {
+    text-align: center;
+}
+.card-content .icon {
+    border-radius: 50%;
+    background: var(--dark-blue);
+    height: 45px;
+    width: 45px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.card-content h1 {
+    color: var(--white);
+    font-size: 1.6em;
+    font-weight: 400;
+    margin: 0.65em 0;
+}
+.card-content p {
+    color: var(--light-grey);
+    font-size: 0.9em;
+    line-height: 1.5em;
+    margin: 0.65em 0;
+}
+.card-content p.rating-selected {
+    background: var(--dark-blue);
+    border-radius: 50px;
+    color: var(--orange);
+    display: inline-block;
+    padding: .7em 1.7em;
+}
+
+/***Form***/
+form {
+    margin: 1.5em 0 0.4em;
+}
+form .rating-container {
+    display: flex;
+    justify-content: space-between;
+}
+form .rating-container div {
+    position: relative;
+    display: inline-block;
+    height: 45px;
+    width: 45px;
+    border-radius: 50px;
+}
+form .rating-container div input {
+    height: 100%;
+    width: 100%;
+    opacity: 0;
+    cursor: pointer;
+}
+form .rating-container div label {
+    position: absolute;
+    pointer-events: none;
+    width: 100%;
+    height: 100%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: var(--dark-blue);
+    color: var(--medium-grey);
+    border-radius: 50px;
+}
+form .rating-container div label span {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+form .rating-container div:hover label {
+    background: var(--light-grey);
+}
+form .rating-container div:hover label {
+    color: var(--white);
+}
+form .rating-container div input:checked + label {
+    background: var(--orange);
+    color: var(--white);
+}
+form button {
+    width: 100%;
+    padding: 0.9em;
+    margin: 1.5em 0 0;
+    border-radius: 50px;
+    background: var(--orange);
+    color: var(--white);
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    font-size: 0.9em;
+    font-family: 'Overpass', sans-serif;
+    border: none;
+    cursor: pointer;
+}
+form button:hover {
+    background: var(--white);
+    color: var(--orange);
+}
+
+/***Attribution***/
+.attribution {
+    color: var(--light-grey);
+    font-size: 0.8em;
+    padding: 1em;
+}
+.attribution a {
+    color: var(--orange);
+}
